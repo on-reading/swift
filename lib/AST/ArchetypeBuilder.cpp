@@ -33,15 +33,17 @@
 #include <algorithm>
 
 using namespace swift;
+/**llvm::DenseMap: 稠密Map*/
 using llvm::DenseMap;
-
+/**嵌套类型*/
 using NestedType = ArchetypeType::NestedType;
-
+/**常成员函数:RequirementSource::dump: 输出报错信息*/
 void RequirementSource::dump(SourceManager *srcMgr) const {
   dump(llvm::errs(), srcMgr);
 }
 
-void RequirementSource::dump(llvm::raw_ostream &out, 
+/**常成员函数:RequirementSource::dump: 输出dump*/
+void RequirementSource::dump(llvm::raw_ostream &out,
                              SourceManager *srcMgr) const {
   switch (getKind()) {
   case Explicit:
